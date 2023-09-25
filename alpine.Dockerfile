@@ -19,7 +19,8 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
 # Change these values to point to a running PostgreSQL instance
 ENV KC_DB=postgres
-ENV KC_DB_URL=postgres:5432/keycloak  # Use the service name from Docker Compose
+# Use the service name from Docker Compose
+ENV KC_DB_URL=postgres:5432/keycloak  
 ENV KC_DB_USERNAME=saynotodream
 ENV KC_DB_PASSWORD=0p3nw0rld
 ENV KC_HOSTNAME=localhost
