@@ -6,18 +6,13 @@ services:
       context: .
       dockerfile: alpine.Dockerfile
     ports:
-      - "8080:8080"
+      - "9100:9100"
     environment:
       - KEYCLOAK_USER=tryagain
       - KEYCLOAK_PASSWORD=0p3nw0rld
-    depends_on:
-      - postgres
-
-  postgres:
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: saynotodream
-      POSTGRES_PASSWORD: 0p3nw0rld
-    ports:
-      - "5432:5432"
+      - DB_VENDOR=postgres
+      - DB_ADDR=localhost
+      - DB_PORT=5432
+      - DB_DATABASE=keycloak
+      - DB_USER=saynotodream
+      - DB_PASSWORD=0p3nw0rld
