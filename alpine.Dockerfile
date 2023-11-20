@@ -21,4 +21,4 @@ ENV KC_HOSTNAME=localhost
 ENV KEYCLOAK_USER=tryagain
 ENV KEYCLOAK_PASSWORD=0p3nw0rld
 
-CMD ["/opt/keycloak/bin/kc.sh", "start"]
+CMD ["/bin/bash", "/opt/keycloak/bin/kc.sh", "start"]
