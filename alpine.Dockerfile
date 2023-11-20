@@ -32,4 +32,4 @@ ENV KEYCLOAK_USER=tryagain
 ENV KEYCLOAK_PASSWORD=0p3nw0rld
 
 # Define the entry point for the container
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+CMD ["/opt/keycloak/bin/kc.sh", "start", "-b", "0.0.0.0"]
