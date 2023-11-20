@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: alpine.Dockerfile
     ports:
-      - "9100:9100"
+      - "8080:8080"
     environment:
       - KEYCLOAK_USER=tryagain
       - KEYCLOAK_PASSWORD=0p3nw0rld
