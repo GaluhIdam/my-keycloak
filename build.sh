@@ -6,11 +6,9 @@ docker-compose build
 # Start the containers in detached mode
 docker-compose up -d
 
-# Wait for Keycloak to be up and running (you can adjust the timeout as needed)
+# Wait for Keycloak to start (adjust timeout as needed)
 echo "Waiting for Keycloak to start..."
-until [ "$(docker-compose exec keycloak curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/auth/)" == "200" ]; do
-    sleep 5
-done
+sleep 10
 
 # Display a message once Keycloak is ready
 echo "Keycloak is up and running at http://localhost:8080/auth/"
